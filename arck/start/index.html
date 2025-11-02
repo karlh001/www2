@@ -284,6 +284,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -316,6 +318,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -324,26 +328,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
       Download
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Download">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#make" class="md-nav__link">
     <span class="md-ellipsis">
       Make
@@ -351,8 +344,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#verify" class="md-nav__link">
     <span class="md-ellipsis">
       Verify
@@ -360,8 +353,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#restore" class="md-nav__link">
     <span class="md-ellipsis">
       Restore
@@ -369,23 +362,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#more" class="md-nav__link">
     <span class="md-ellipsis">
       More
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -697,6 +680,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -705,26 +690,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#download" class="md-nav__link">
     <span class="md-ellipsis">
       Download
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Download">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#make" class="md-nav__link">
     <span class="md-ellipsis">
       Make
@@ -732,8 +706,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#verify" class="md-nav__link">
     <span class="md-ellipsis">
       Verify
@@ -741,8 +715,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#restore" class="md-nav__link">
     <span class="md-ellipsis">
       Restore
@@ -750,23 +724,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#more" class="md-nav__link">
     <span class="md-ellipsis">
       More
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -786,25 +750,27 @@
 
 
 
-  <h1>Getting Started</h1>
-
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="download">Download</h3>
-<p>Download and install first, <a href="../download/">click here</a></p>
-<h5 id="make">Make</h5>
-<p>To make an archive, simply run:</p>
-<pre><code>arck make -v /path/to/source/ /output/dir/
-</code></pre>
-<h5 id="verify">Verify</h5>
-<p>And to verify an archive, point to the metadata file, ending with the <code>m</code> extension.</p>
-<pre><code>arck verify -v /path/to/meta.m
-</code></pre>
-<h5 id="restore">Restore</h5>
-<p>And to restore (extract) the archive:</p>
-<pre><code>arck restore /output/dir/archive_name.m /path/to/destination
-</code></pre>
-<h5 id="more">More</h5>
-<p>Full usage, <a href="../usage/">click here</a></p>
+<h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h2>
+<p>Download and install first, ⬇️ <a href="../download/">click here</a></p>
+<h2 id="make">Make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>-v</code> flag shows verbose output.</p>
+</div>
+<p>➡️ To make an archive, simply run:</p>
+<div class="highlight"><pre><span></span><code>arck make -v /path/to/source/ /output/dir/
+</code></pre></div>
+<h2 id="verify">Verify<a class="headerlink" href="#verify" title="Permanent link">&para;</a></h2>
+<p>✅ And to verify an archive, point to the metadata file, ending with the <code>m</code> extension.</p>
+<div class="highlight"><pre><span></span><code>arck verify -v /path/to/meta.m
+</code></pre></div>
+<h2 id="restore">Restore<a class="headerlink" href="#restore" title="Permanent link">&para;</a></h2>
+<p>⬅️ And to restore (extract) the archive:</p>
+<div class="highlight"><pre><span></span><code>arck restore -v /output/dir/archive_name.m /path/to/destination
+</code></pre></div>
+<h2 id="more">More<a class="headerlink" href="#more" title="Permanent link">&para;</a></h2>
+<p>Full usage, 📖 <a href="../usage/">click here</a></p>
 
 
 
@@ -853,7 +819,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.admonitions", "content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>

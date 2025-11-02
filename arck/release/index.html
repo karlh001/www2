@@ -618,12 +618,13 @@
 
 
 
-<h1 id="release-notes">Release Notes</h1>
-<h1 id="130">1.3.0</h1>
+<h1 id="release-notes">Release Notes<a class="headerlink" href="#release-notes" title="Permanent link">&para;</a></h1>
+<h1 id="130">1.3.0<a class="headerlink" href="#130" title="Permanent link">&para;</a></h1>
 <p><strong>01 Nov 2025</strong></p>
-<blockquote>
-<p><strong>Breaking Changes</strong>: If you are using scripts to manage arcK, these scripts will be broken due to change in command syntax when upgrading from 1.2.x to 1.3.x</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title"><strong>Breaking Changes</strong></p>
+<p>If you are using scripts to manage arcK, these scripts will be broken due to change in command syntax when upgrading from 1.2.x to 1.3.x</p>
+</div>
 <ul>
 <li>Enhancement: syntax change. Commands now: make, verify and restore followed by flags, e.g. <code>arck make -v /path/ /dest/path/</code> or <code>arck restore /path/to/file.m /dest/path/</code> <a href="../usage/">more</a></li>
 <li>Enhancement: if you specify a file, does not tar first, encodes directly</li>
@@ -639,31 +640,31 @@
 </ul>
 </li>
 </ul>
-<h2 id="124">1.2.4</h2>
+<h2 id="124">1.2.4<a class="headerlink" href="#124" title="Permanent link">&para;</a></h2>
 <p><strong>25 Oct 2025</strong></p>
+<ul>
+<li>Bug: fixed unable to extract legacy files</li>
+</ul>
+<h2 id="123">1.2.3<a class="headerlink" href="#123" title="Permanent link">&para;</a></h2>
+<p><strong>24 Oct 2025</strong></p>
 <blockquote>
 <p>For documentation, visit archived pages <a href="https://karlhunter.co.uk/arck_12_branch/">here</a></p>
 </blockquote>
 <ul>
-<li>Bug: fixed unable to extract legacy files</li>
-</ul>
-<h2 id="123">1.2.3</h2>
-<p><strong>24 Oct 2025</strong></p>
-<ul>
 <li>Enhancement: if you specify a file, does not tar first, encodes directly</li>
 <li>Tweak: File size shows in GB not bytes</li>
 </ul>
-<h2 id="122">1.2.2</h2>
+<h2 id="122">1.2.2<a class="headerlink" href="#122" title="Permanent link">&para;</a></h2>
 <p><strong>20 Oct 2025</strong></p>
 <ul>
 <li>Feature: checks available disk space before creating or extracting archive</li>
 <li>Feature: --ignore-size <a href="../usage/">flag</a> (which will skip above feature)</li>
 <li>Fun: anniversary upgrade (arcK is 1 year old)</li>
 </ul>
-<h2 id="121">1.2.1</h2>
+<h2 id="121">1.2.1<a class="headerlink" href="#121" title="Permanent link">&para;</a></h2>
 <p><strong>29 Apr 2025</strong></p>
 <p>Bug: Verify feature: fixed incorrect reporting around data corruption if users sets own par value during creation</p>
-<h2 id="120">1.2.0</h2>
+<h2 id="120">1.2.0<a class="headerlink" href="#120" title="Permanent link">&para;</a></h2>
 <p><strong>29 Apr 2025</strong>*</p>
 <blockquote>
 <p><strong>Breaking changes</strong>: archives created in this version cannot be extracted or verified by previous versions; however, backward compatability still exists: previous archives created by all arcK versions can be restored and verifed</p>
@@ -677,7 +678,7 @@
 <li>Reduced verbose output in normal mode</li>
 <li>Bug: fixed overwriting of file if same name given during creation</li>
 </ul>
-<h2 id="116">1.1.6</h2>
+<h2 id="116">1.1.6<a class="headerlink" href="#116" title="Permanent link">&para;</a></h2>
 <p><strong>14 Apr 2025</strong></p>
 <blockquote>
 <p>For documentation, visit archived pages <a href="https://karlhunter.co.uk/arck_legacy/">here</a></p>
@@ -687,7 +688,7 @@
 <li>Bug: Fixed display bug which reports a mixture of missing and failed can still be restored</li>
 <li>Added URL to aid users understand <em>fail</em> or <em>missing</em> error</li>
 </ul>
-<h2 id="115">1.1.5</h2>
+<h2 id="115">1.1.5<a class="headerlink" href="#115" title="Permanent link">&para;</a></h2>
 <p><strong>06 Apr 2025</strong></p>
 <blockquote>
 <p><strong>Breaking changes</strong>: archives created in this version cannot be extracted or verified by previous versions; however, backward compatability still exists: previous archives created by all arcK versions can be restored and verifed from 1.1.5 onwards</p>
@@ -696,36 +697,36 @@
 <li>Allows additional metadata in the future to m file</li>
 <li>Fixes critcal bug that crashes if m file does not exist or broken</li>
 </ul>
-<h2 id="114">1.1.4</h2>
+<h2 id="114">1.1.4<a class="headerlink" href="#114" title="Permanent link">&para;</a></h2>
 <p><strong>05 Apr 2025</strong></p>
 <ul>
 <li>If no project specified, then will be name of file or directory</li>
 <li>Built with go version 1.24.2</li>
 <li>Minor text tweaks</li>
 </ul>
-<h2 id="113">1.1.3</h2>
+<h2 id="113">1.1.3<a class="headerlink" href="#113" title="Permanent link">&para;</a></h2>
 <ul>
 <li>No new features; new year bump</li>
 </ul>
-<h2 id="112">1.1.2</h2>
+<h2 id="112">1.1.2<a class="headerlink" href="#112" title="Permanent link">&para;</a></h2>
 <p><strong>27 Oct 2024</strong></p>
 <ul>
 <li>Added skip flag (skips verification checks during restore)</li>
 <li>Improved a few info messages and error messages during restore should failure occur</li>
 </ul>
-<h2 id="111">1.1.1</h2>
+<h2 id="111">1.1.1<a class="headerlink" href="#111" title="Permanent link">&para;</a></h2>
 <p><strong>19 Oct 2024</strong></p>
 <ul>
 <li>Fixed deb package. Conflicting package called ark already exists. Change to arck</li>
 <li>Changed project name, arcK</li>
 </ul>
-<h2 id="110">1.1.0</h2>
+<h2 id="110">1.1.0<a class="headerlink" href="#110" title="Permanent link">&para;</a></h2>
 <p><strong>13 Oct 2024</strong></p>
 <ul>
 <li>New wizard</li>
 <li>Minor tweaks and fixes</li>
 </ul>
-<h2 id="100">1.0.0</h2>
+<h2 id="100">1.0.0<a class="headerlink" href="#100" title="Permanent link">&para;</a></h2>
 <p><strong>12 Oct 2024</strong></p>
 <p>Welcome to the first release of ark. We hope you find it useful.</p>
 
@@ -776,7 +777,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.admonitions", "content.code.copy"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
