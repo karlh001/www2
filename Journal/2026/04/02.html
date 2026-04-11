@@ -9,7 +9,7 @@
     <meta name="author" content="Karl Hunter">
     <link rel="icon" href="https://karlhunter.co.uk/res/images/favicon.ico') %]">
 
-    <title>Thursday 19 Oct 2023</title>
+    <title>Thursday 02 Apr 2026</title>
 
     <!-- JS Jquery and Bootstrap scripts -->
     <script type='text/javascript' src="[https://karlhunter.co.uk/res/js/jquery-3.6.0.min.js" type="text/javascript"></script>
@@ -45,11 +45,11 @@
       </div>
       <div class="btn-toolbar" role="toolbar" aria-label="Button groups">
         <div class="btn-group mr-2" role="group" aria-label="Navigation group">
-              <button type="button" class="btn btn-info btn-xs" role="button" onclick="location.href='./10.html'">Prev</button>
+              <button type="button" class="btn btn-info btn-xs" role="button" onclick="location.href='../04.html'">Prev</button>
   
               <button type="button" class="btn btn-info btn-xs" role="button" onclick="location.href='../../../map.html'">Index</button>
 
-              <button type="button" class="btn btn-info btn-xs" role="button" onclick="location.href='./30.html'">Next</button>
+              <button type="button" class="btn btn-info btn-xs" role="button" onclick="location.href='../../Index.html'">Next</button>
         </div>
       </div>
       <div>
@@ -77,28 +77,18 @@
 <li><a href="../../../Journal.html" title="Journal" class="page">Journal</a>
 <ul>
 <li><a href="../../2022.html" title="2022" class="page">2022</a></li>
-<li><a href="../../2023.html" title="2023" class="page">2023</a>
+<li><a href="../../2023.html" title="2023" class="page">2023</a></li>
+<li><a href="../../2024.html" title="2024" class="page">2024</a></li>
+<li><a href="../../2025.html" title="2025" class="page">2025</a></li>
+<li><a href="../../2026.html" title="2026" class="page">2026</a>
 <ul>
 <li><a href="../01.html" title="01" class="page">01</a></li>
 <li><a href="../02.html" title="02" class="page">02</a></li>
-<li><a href="../03.html" title="03" class="page">03</a></li>
-<li><a href="../04.html" title="04" class="page">04</a></li>
-<li><a href="../07.html" title="07" class="page">07</a></li>
-<li><a href="../08.html" title="08" class="page">08</a></li>
-<li><a href="../09.html" title="09" class="page">09</a></li>
-<li><a href="../10.html" title="10" class="page">10</a>
+<li><a href="../04.html" title="04" class="page">04</a>
 <ul>
-<li><a href="./10.html" title="10" class="page">10</a></li>
-<li><b>19</b></li>
-<li><a href="./30.html" title="30" class="page">30</a></li>
-<li><a href="./31.html" title="31" class="page">31</a></li>
+<li><b>02</b></li>
 </ul></li>
-<li><a href="../11.html" title="11" class="page">11</a></li>
-<li><a href="../12.html" title="12" class="page">12</a></li>
 </ul></li>
-<li><a href="../../2024.html" title="2024" class="page">2024</a></li>
-<li><a href="../../2025.html" title="2025" class="page">2025</a></li>
-<li><a href="../../2026.html" title="2026" class="page">2026</a></li>
 <li><a href="../../Index.html" title="Index" class="page">Index</a></li>
 </ul></li>
 <li><a href="../../../Money.html" title="Money" class="page">Money</a></li>
@@ -119,24 +109,136 @@
               </div>
             </noscript>
 
-                <h1>Thursday 19 Oct 2023<a name='Thursday 19 Oct 2023_1_1' class="offset-anchor"></a></h1>
+                <h1>Thursday 02 Apr 2026<a name='Thursday 02 Apr 2026_1_1' class="offset-anchor"></a></h1>
               
 <hr>
 
 
-                <h2>Convert MP4 to MP3<a name='Convert MP4 to MP3_1_2' class="offset-anchor"></a></h2>
+                <h2>Document incremental backup and test restore (ZFS)<a name='Document incremental backup and test restore (ZFS)_1_2' class="offset-anchor"></a></h2>
+              
+                <h3>How I backup my documents dataset<a name='How I backup my documents dataset_1_3' class="offset-anchor"></a></h3>
               <p>
-I needed to convert a media file from the mp4 format to mp3. Being Linux, this was achieved with an easy command. 
+I am using B2 (Backblaze) to store my document dataset. Every night, an incremental daily send is generated using my orginal full dataset, then the same occurs weekly. If I need to restore, I can grab the full and last weekly, then increment up daily.
 </p>
 
 <p>
-<tt>ffmpeg -i MediaFile.mp4 MediaFile.mp3</tt>
+Here is how my backup appears on B2 using rclone:
+</p>
+
+<pre>
+2936020620 20260304_documents[full].zfs
+  1546260 20260309_documents[weekly][inc].zfs
+ 16503316 20260320_documents[weekly][inc].zfs
+  2368844 20260321_documents[daily][inc].zfs
+   811956 20260322_documents[daily][inc].zfs
+ 16506732 20260322_documents[weekly][inc].zfs
+   869204 20260323_documents[daily][inc].zfs
+    38132 20260324_documents[daily][inc].zfs
+  1059516 20260325_documents[daily][inc].zfs
+   935004 20260326_documents[daily][inc].zfs
+  1786492 20260327_documents[daily][inc].zfs
+  1071804 20260328_documents[daily][inc].zfs
+   991740 20260329_documents[daily][inc].zfs
+ 16459876 20260329_documents[weekly][inc].zfs
+    99644 20260330_documents[daily][inc].zfs
+  2205524 20260331_documents[daily][inc].zfs
+</pre>
+
+<p>
+Therefore to get back to <tt>20260331</tt>, I download only these dataset backups, then restore in the following order:
+</p>
+
+<ol type="1" start="1">
+<li>20260304_documents[full].zfs</li>
+<li>20260329_documents[weekly][inc].zfs</li>
+<li>20260330_documents[daily][inc].zfs</li>
+<li>20260331_documents[daily][inc].zfs</li>
+</ol>
+
+<p>
+Each night this command runs:
+</p>
+
+                <h3>=<a name='=_1_4' class="offset-anchor"></a></h3>
+              
+                <h4>Weekly:<a name='Weekly:_1_5' class="offset-anchor"></a></h4>
+              <p>
+<tt>#!/bin/sh</tt><br>
+<tt># Weekly document increment to reduce restore time</tt>
 </p>
 
 <p>
-That's it. Just thought I would share.
+<tt>DAILY=`date +"%Y%m%d"`</tt><br>
+<tt>DRIVE=/drive</tt><br>
+<tt>RCLONE_CONFIG=RCLONE_REMOTE</tt><br>
+<tt>BUCKET=NAME_OF_YOUR_BUCKET</tt><br>
+<tt>RCLONE_CONFIG=/path/rclone.conf</tt>
 </p>
 
+<p>
+<tt>###########################################################################################################</tt>
+</p>
+
+<p>
+<tt># ZFS send documents dataset</tt><br>
+<tt>zfs send --raw -i rust/my_documents#20260304_b2_full rust/my_documents@Daily_${DAILY} \</tt><br>
+<tt>| mbuffer -m 256m | \</tt><br>
+<tt>rclone rcat ${RCLONE_CONFIG}:${BUCKET}/${DAILY}_documents[weekly][inc].zfs --size-only \</tt><br>
+<tt>--config=${RCLONE_CONFIG}</tt>
+</p>
+
+<p>
+<tt>###########################################################################################################</tt>
+</p>
+
+<p>
+I am using mbuffer for a stable transfer, and the rclone rcat command to stream the dataset straight to B2 without first creating the increment dataset on disk. 
+</p>
+
+<p>
+I always specify my rclone config with scripts.
+</p>
+
+
+
+
+                <h3>How to restore my document increment<a name='How to restore my document increment_1_6' class="offset-anchor"></a></h3>
+              <p>
+A backup is no good if it cannot be restored. So I peridocially test this. 
+</p>
+
+<p>
+Download last [weekly] increment, remember I need the last full:
+</p>
+
+<p>
+Then run the command:
+</p>
+
+<p>
+<tt>sudo zfs recv -u rust/test_doc_restore &lt; "20260329_documents[weekly][inc].zfs"</tt>
+</p>
+
+<p>
+If I have automatic snapshots, I need to rollback the test document restore dataset
+</p>
+
+<p>
+<tt>sudo zfs rollback rust/test_doc_restore@Daily_20260304 -r</tt>
+</p>
+
+<p>
+To test how ZFS would react to a bit flip, I used a python script to flip one bit. When I tried to restore I instantly got this error:
+</p>
+
+<p>
+<tt>cannot receive incremental stream: checksum mismatch</tt>
+</p>
+
+
+<p>
+This is a excellent hands-off method to keep my faster changing dataset (documents) backup. This occurs every night and week. I backup all my datasets to my other backup NAS weekly, so this backup will capture changed files since my last NAS backup occured.
+</p>
 
 
             
@@ -144,10 +246,7 @@ That's it. Just thought I would share.
                 <hr class='footnotes'>
                 <b>Backlinks:</b>
                 <br />
-                <a href='../../Index.html'>Journal:Index</a>
-                
-<br />
-                <a href='../10.html'>Journal:2023:10</a>
+                <a href='../04.html'>Journal:2026:04</a>
                 
             </span>
 
